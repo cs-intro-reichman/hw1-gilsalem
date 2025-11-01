@@ -12,11 +12,31 @@ public class TimeFormat {
 			{
 				hours=hours-12;
 			}
-			System.out.println(hours+":"+minutes+"pm");
+			if (minutes<10)
+			{
+				System.out.println(hours+":0"+minutes+" PM");
+			}
+			else
+			{
+				System.out.println(hours+":"+minutes+" PM");
+			}
 		}
 		else
 		{
-			System.out.println("0"+hours+":0"+minutes+"am");
+			if(minutes>=10 && hours>=10)
+			{
+				System.out.println(hours+":"+minutes+" AM");
+			}
+			else if(minutes>=10 && hours<10)
+			{
+				System.out.println("0"+hours+":"+minutes+" AM");
+			}
+			else if(minutes<10 && hours>=10)
+			{
+				System.out.println(hours+":0"+minutes+" AM");
+			}
+			else
+			System.out.println("0"+hours+":0"+minutes+" AM");
 		}
 	}
 }
